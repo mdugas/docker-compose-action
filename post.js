@@ -1,5 +1,10 @@
 const core = require("@actions/core");
-const compose = require("docker-compose");
+const composeV1 = require('docker-compose')
+const composeV2 = require('docker-compose/dist/v2')
+const compose =
+  core.getInput("compose-version") === "v1"
+    ? composeV1
+    : composeV2
 const utils = require("./utils");
 
 try {

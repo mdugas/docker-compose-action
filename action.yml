@@ -9,6 +9,10 @@ inputs:
     description: "additional options to pass to `docker-compose` command"
     required: false
     default: ""
+  compose-version: # id of input
+    description: "Docker Compose version; v1 = docker-compose; v2 = docker compose"
+    required: false
+    default: "v2"
   down-flags: # id of input
     description: "additional options to pass to `docker-compose down` command"
     required: false
