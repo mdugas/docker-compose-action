@@ -1,11 +1,11 @@
 const core = require("@actions/core");
-const utils = require("./utils");
-import * as composeV1 from 'docker-compose'
-import { v2 as composeV2 } from 'docker-compose'
+const composeV1 = require('docker-compose')
+const composeV2 = require('docker-compose/dist/v2')
 const compose =
   core.getInput("compose-version") === "v1"
     ? composeV1
     : composeV2
+const utils = require("./utils");
 //const path = require("path");
 
 try {
